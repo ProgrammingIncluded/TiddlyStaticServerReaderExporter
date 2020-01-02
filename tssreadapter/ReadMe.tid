@@ -1,0 +1,11 @@
+title: $:/plugins/programmingincluded/tssreadaptor/ReadMe
+
+''Warning: once this file adapter is installed, a proper host must be given and verified to work otherwise the wiki may not fetch any data''
+
+Obtain tiddly files from the following host:
+Host: <$edit-text tiddler="$:/config/tssre/host" tag="input" default=""/>
+<br />
+Test the host before saving html file:
+<$button message="tssre-test">
+Test Host
+</$button>
