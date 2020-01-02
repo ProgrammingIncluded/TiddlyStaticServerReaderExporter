@@ -1,0 +1,16 @@
+title: $:/plugins/programmingincluded/tssre/Export
+caption: TSSRE
+
+
+Your host folder should contain `.tid` files necessary to run tiddlywiki and contains your tiddler data.
+Make sure that your host can deliver these `.tid` files.
+This is the same folder setup used by ~NodeJS version of ~TiddlyWiki under `tiddlers` folder.
+
+''You must have a server-client TiddlyWiki setup for this to work''
+
+Export current wiki with static html:
+<$button message="tssre-export">
+    Export
+</$button>
+
+<br />

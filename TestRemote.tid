@@ -1,0 +1,14 @@
+title: $:/plugins/programmingincluded/tssre/TestRemote
+caption: TSSRE
+
+The following tests and makes sure that the remote given is setup to run a TSSRE exported wiki file.
+
+Host: <$edit-text tiddler="$:config/tssre/host" tag="input" default=""/>
+<br />
+Example: [[http://www.yourhost.com/tiddlers | ""]]
+
+
+Tests if the host has a valid TSSRE setup. Use after export:
+<$button message="tssre-test">
+    Test Host
+</$button>

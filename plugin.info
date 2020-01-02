@@ -1,10 +1,10 @@
 {
     "title": "$:/plugins/programmingincluded/tssre",
-    "description": "Export small html files that read from a static file server",
-    "author": "Charles H. Chen",
+    "description": "TSSRE: Tiddly static site reader/exporter",
+    "author": "ProgrammingIncluded",
     "version": "0.0.1",
     "core-version": ">=5.0.8",
     "source": "https://github.com/ProgrammingIncluded/TiddlyStaticServerReaderExporter",
     "plugin-type": "plugin",
-    "list": "readme TSSREControlPanel"
+    "list": "ReadMe Export TestRemote"
 }
