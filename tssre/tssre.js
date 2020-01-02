@@ -44,7 +44,7 @@ module-type: startup
 
         // Check to see if special file exists on host
         $tw.utils.httpRequest({
-            url: host + "/tiddlers/" + remoteFilename + ".tid",
+            url: host + "/" + remoteFilename + ".tid",
             callback: function(err, data, request) {
                 if (data == null) {
                     notify("Failed to get TSSRE setup at: " + host);
