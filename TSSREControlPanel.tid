@@ -1,0 +1,24 @@
+title: $:/plugins/programmingincluded/tssre/TSSREControlPanel
+caption: TSSRE
+
+
+Your host folder should contain `.tid` files necessary to run tiddlywiki and contains your tiddler data.
+Make sure that your host can deliver these `.tid` files.
+This is the same folder setup used by ~NodeJS version of ~TiddlyWiki under `tiddlers` folder.
+
+Host: <$edit-text tiddler="$:config/tssre/host" tag="input" default=""/>
+Example: http://www.yourhost.com/tiddlers
+
+<$tssre>
+    <$button message="tssre-test">
+        Test Host
+    </$button>
+    Tests if the host has a valid TSSRE setup.
+
+
+    <$button message="tssre-export">
+        Export
+    </$button>
+    Export current wiki with static html.
+</$tssre>
+
