@@ -1,9 +1,5 @@
 # Tiddly Static Server Reader and Exporter (TSSRE)
-**Use Case:** Publishing TiddlyWiki site to locations like `github.io` in such a way as to reduce the filesize of `index.html`.
-
-This plugin reduces the need to know the underlying structure of TiddlyWiki by supporting the following:
-- A plugin that can export a standalone tiddly wiki that can GET from a host's static folder.
-- Removes the adapter abstraction like `tiddlyweb` so that TiddlyWiki `download` and `save` functionalities are not affected.
+Publishing TiddlyWiki site to locations like `github.io` in such a way as to reduce the filesize of `index.html`.
 
 ## Project Folder
 The project consists of two parts: `tssre` and `tssre-adapater`:

@@ -1,5 +1,5 @@
 /*\
-title: $:/plugins/programmingincluded/tssre/tssre.js
+title: $:/plugins/programmingincluded/tssre-adaptor/tssre-adaptor-start.js
 type: application/javascript
 module-type: startup
 
@@ -9,37 +9,6 @@ module-type: startup
     var REMOTE_TIDDLER_FILE = "$:/config/tssre/remote-tiddlers";
     var HOST_TIDDLER = "$:config/tssre/host";
     var NOTIFICATION_TIDDLER = "$:/config/tssre/notification";
-    var TIDDLER_CACHE = [];
-
-    // Function to setup list of available tiddlers and save it as a tiddler file
-    // This will work if on NodeJS server
-    var saveTiddlerNames = function(callback) {
-        var tiddlers = $tw.wiki.getTiddlers();
-        var skinny = [];
-        tiddlers.forEach((item) => {
-            if (TIDDLER_CACHE.includes(item)) {
-                return ;
-            }
-
-            TIDDLER_CACHE.push(item);
-            // Create a skinny link like the webapi
-            var json = $tw.wiki.getTiddler(item);
-            var result = {};
-            ["title", "tags", "type"].forEach((t)=> {
-                result[t] = json.fields[t];
-            });
-            ["created", "modified"].forEach((t) => {
-                if (json.fields[t] != undefined) {
-                    result[t] = json.fields[t].valueOf();
-                } else {
-                    result[t] = json.fields[t];
-                }
-            });
-            skinny.push(result);
-        });
-        var tiddlerJson = JSON.stringify(skinny);
-        $tw.wiki.setTiddlerData(REMOTE_TIDDLER_FILE, tiddlerJson);
-    };
 
     var notify = function(msg) {
         $tw.wiki.setTiddlerData(NOTIFICATION_TIDDLER, msg);
@@ -80,25 +49,6 @@ module-type: startup
 
 
     exports.startup = function() {
-        // Save tiddler names on save
-        $tw.rootWidget.addEventListener("tm-save-wiki", function (event) {
-            saveTiddlerNames();
-            return true;
-        });
-
-        // Save tiddler names on auto-save
-        $tw.rootWidget.addEventListener("tm-auto-save-wiki", function (event) {
-            saveTiddlerNames();
-            return true;
-        });
-
-        $tw.rootWidget.addEventListener("tssre-export", function (event) {
-            // Set tiddler file with all the meta data
-            saveTiddlerNames();
-            notify("Saved TSSRE data at: " + REMOTE_TIDDLER_FILE);
-            return true;
-        });
-
         $tw.rootWidget.addEventListener("tssre-test", function (event) {
             // Get the host that is inputted by user
             var host = getHost();

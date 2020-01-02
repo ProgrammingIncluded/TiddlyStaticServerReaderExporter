@@ -1,7 +1,3 @@
 title: $:/plugins/programmingincluded/tssre/ReadMe
 
-This plugin reduces the need to know the underlying structure of TiddlyWiki by supporting the following:
-
-* A control panel that can export a standalone tiddly wiki that can GET from a host's static folder.
-* Removes the adapter abstraction like `tiddlyweb` so that TiddlyWiki `download` and `save` functionalities are not affected.
-** Provides an export button to get the generated html file.
+Publishing TiddlyWiki site to locations like github.io in such a way as to reduce the filesize of index.html.

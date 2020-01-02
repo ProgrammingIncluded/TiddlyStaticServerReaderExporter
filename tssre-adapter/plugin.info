@@ -1,0 +1,10 @@
+{
+    "title": "$:/plugins/programmingincluded/tssre-adaptor",
+    "description": "TSSRE-Adaptor: Tiddly static site reader/exporter adaptor",
+    "author": "ProgrammingIncluded",
+    "version": "0.0.1",
+    "core-version": ">=5.0.8",
+    "source": "https://github.com/ProgrammingIncluded/TiddlyStaticServerReaderExporter",
+    "plugin-type": "plugin",
+    "list": "ReadMe Host"
+}
