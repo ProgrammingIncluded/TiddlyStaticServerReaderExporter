@@ -5,9 +5,6 @@ This plugin reduces the need to know the underlying structure of TiddlyWiki by s
 - A plugin that can export a standalone tiddly wiki that can GET from a host's static folder.
 - Removes the adapter abstraction like `tiddlyweb` so that TiddlyWiki `download` and `save` functionalities are not affected.
 
-
-**This plugin is different from Node JS and tiddlyweb plugins in that it does not attempt to modify the file adapters and more so to enable smaller wiki files on download mapped to a button.**
-
 ## Project Folder
 The project consists of two parts: `tssre` and `tssre-adapater`:
 - `tssre`
@@ -15,7 +12,7 @@ The project consists of two parts: `tssre` and `tssre-adapater`:
 - `tssre-adapter`
   - Should be installed on remote static site as a plugin in `tiddlywiki.html`
 
-## Usage
+## Setup
 The following should only have to be done once:
 
 1. Have a copy of TiddlyWiki that saves tiddlers into a folder with `.tid` like NodeJS version.
@@ -28,10 +25,6 @@ The following should only have to be done once:
 
 **Only steps 3 and 4 have to be repeated in order to update the tiddly wiki. You site should allow GET operations on the `tiddlers` folder.**
 
-Everytime a save or build (from CLI) is executed, `tssre` will generate a list of tiddler names (this might need to be optimized for larger wikis).
-Make sure that your folder containing `.tid` files contains all `tiddler` files in order for TiddlyWiki
-to get the necessary files to run properly.
-
 ## How it Works
 On any save or auto-save (this includes cli `--build` options), `tssre` will add all available tiddler
 names into `$:/config/programmingincluded/tssre/remote-tiddlers`.
@@ -40,7 +33,7 @@ Later on, when one pushes their `tiddler` directory to a remote, the `tssre-adap
 list to figure out what tiddlers are on the server to be able to fetch it.
 
 As a result `tssre` is designed for small to medium sized wikis.
-`tssre` should not be used for large wikis either it should be optimized (file an issue) or manually
+`tssre` should not be used for large wikis either it should be optimized (file an issue/request) or manually
 update the `$:/config/programmingincluded/tssre/remote-tiddlers` tiddler.
 
 ## Other Misc
